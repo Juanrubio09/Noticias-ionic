@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SENA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bg-color-panel heigth-head">
+    <ion-list color="transparent">
+      <ion-item>
+        <ion-button color="success">FORMACION</ion-button>
+        <ion-button color="success">CORDINACION</ion-button>
+        <ion-button color="success">NOVEDADES</ion-button>
+
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-list>
+    <ion-item lines="">
+      <div class="ion-text-center" >
+        <ion-title color="success">Noticias</ion-title>
+      </div>
+
+  </ion-item>
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor= "let notis of listNoticias" (click)="navigate(notis)">
+            <ion-card *ngIf="notis.show">
+             <ion-card-content >
+                <ion-grid fixed>
+                  <ion-row>
+
+                    <ion-col size="6" color="success">
+                      <img src= "{{notis.url_imag}}" alt="">
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text color="primary">
+                        <h3>{{notis.title}}</h3>
+                        <p style="font-size: 10px;">{{notis.text_small}}</p>
+                      </ion-text>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+    </ion-item>
+  </ion-list>
+</ion-content>
+

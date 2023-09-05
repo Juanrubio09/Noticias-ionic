@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dash</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Dash</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-text slot="start" color="primary"> {{titleNews}} </ion-text>
+      <ion-icon slot="end" color="primary" (click)="back()" name="arrow-undo-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-card>
+        <img alt="Silhouette of mountains" 
+        [src]= "imagenDetailNew" />
+        <ion-card-header>
+          <ion-toolbar>
+          <span slot="start"> {{ subTitleNews }}</span> <span slot="end">{{dataDetailNews}}</span> 
+          </ion-toolbar>
+        </ion-card-header>
+
+        <ion-card-content class="ion-text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem provident, perferendis officiis tempora
+          aperiam exercitationem labore molestiae mollitia nam rerum repellat ut, pariatur, aliquid quasi saepe. Facilis
+          illum cumque perferendis?Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-content>
+        <ion-footer>
+          <ion-toolbar>
+            <ion-icon class="heard" name="heart-circle-outline"></ion-icon>
+            <ion-icon class="dirc"  name="add-circle-outline"></ion-icon>
+            <a [href]=" fuenteUrlNews " slot="end" target="_blank"><ion-icon class="eye" name="link-outlne"></ion-icon></a>
+
+
+          </ion-toolbar>
+          
+        </ion-footer>
+      </ion-card>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
